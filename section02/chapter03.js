@@ -1,0 +1,26 @@
+// 1. 배열의 구조 분해 할당
+let arr = [1, 2, 3];
+
+let [one, two, three, four = 4] = arr;
+console.log(one, two, three, four);
+
+// 2. 객체의 구조 분해 할당
+let person = {
+  name: "조정원", 
+  age: 27,
+  hobby: "영화"
+}
+
+let {
+  age: myAge,
+  name,
+  hobby
+} = person;
+console.log(name, myAge, hobby);
+
+// 3. 객체 구조분해 할당을 이용해서 함수의 매개변수를 받는 방법
+const func = ({name, age: myAge, hobby, extra}) => {
+  console.log(name, myAge, hobby);
+}
+
+func(person)
